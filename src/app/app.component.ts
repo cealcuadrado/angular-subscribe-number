@@ -1,3 +1,4 @@
+import { NumberService } from './services/number.service';
 import { Component } from '@angular/core';
 
 @Component({
@@ -7,4 +8,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'subscribe-number';
+
+  constructor(
+    private numberService: NumberService
+  ) { }
+
+  sendNumber(n: number): void {
+    this.numberService.setNumber(n);
+  }
 }
